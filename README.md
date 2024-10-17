@@ -22,7 +22,7 @@ Dies ist ein stilvoller Countdown-Timer, der mit HTML, CSS und JavaScript erstel
 - Klicke auf "End Countdown", um den Countdown zu beenden.
 
 ### Lizenz
-Dieses Projekt ist unter der MIT-Lizenz lizenziert. Siehe die [LICENSE](LICENSE) Datei für weitere Informationen.
+Dieses Projekt ist unter der MIT-Lizenz lizenziert. Siehe die [LICENSE.txt](LICENSE) Datei für weitere Informationen.
 
 ---
 
