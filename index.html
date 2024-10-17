@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stylish Countdown Timer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background: linear-gradient(135deg, #ff2d55, #ff5e3a, #ffbd45);
+            background-size: 400% 400%;
+            animation: gradient 8s ease infinite;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .shadow-custom {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .timer {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 1.5rem;
+            padding: 2.5rem;
+            backdrop-filter: blur(15px);
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            transition: transform 0.3s ease;
+        }
+
+        .timer:hover {
+            transform: scale(1.05);
+        }
+
+        .button {
+            transition: all 0.3s ease;
+            border-radius: 50px;
+            font-weight: 600;
+        }
+
+        .button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+        }
+    </style>
+</head>
+
+<body class="flex items-center justify-center h-screen">
+
+    <div class="text-center space-y-8">
+        <h1 class="text-white text-6xl font-extrabold drop-shadow-lg">Countdown Timer</h1>
+
+        <div class="timer mx-auto flex items-center justify-center gap-8">
+            <button id="minusMinuteBtn" class="button px-8 py-4 bg-red-600 hover:bg-red-500 text-white text-xl rounded-full">-1 Minute</button>
+            <div id="timer" class="text-8xl text-white font-extrabold">00:00</div>
+            <button id="addMinuteBtn" class="button px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white text-xl rounded-full">+1 Minute</button>
+        </div>
+
+        <div class="flex justify-center gap-6 mt-4">
+            <button id="startBtn" class="button px-8 py-4 bg-green-600 hover:bg-green-500 text-white text-xl rounded-full">Start</button>
+            <button id="stopBtn" class="button px-8 py-4 bg-yellow-600 hover:bg-yellow-500 text-white text-xl rounded-full">Stop</button>
+            <button id="endBtn" class="button px-8 py-4 bg-red-600 hover:bg-red-500 text-white text-xl rounded-full">End Countdown</button>
+        </div>
+    </div>
+
+    <script>
+        let countdown;
+        let timeLeft = 60; // Startzeit in Sekunden (1 Minute)
+
+        const timerDisplay = document.getElementById('timer');
+        const startBtn = document.getElementById('startBtn');
+        const stopBtn = document.getElementById('stopBtn');
+        const addMinuteBtn = document.getElementById('addMinuteBtn');
+        const minusMinuteBtn = document.getElementById('minusMinuteBtn');
+        const endBtn = document.getElementById('endBtn');
+
+        function displayTime(seconds) {
+            const minutes = Math.floor(seconds / 60);
+            const remainderSeconds = seconds % 60;
+            timerDisplay.textContent = `${minutes}:${remainderSeconds < 10 ? '0' : ''}${remainderSeconds}`;
+        }
+
+        function startTimer() {
+            countdown = setInterval(() => {
+                if (timeLeft > 0) {
+                    timeLeft--;
+                    displayTime(timeLeft);
+                } else {
+                    clearInterval(countdown);
+                    alert('Time is up!');
+                }
+            }, 1000);
+        }
+
+        function stopTimer() {
+            clearInterval(countdown);
+        }
+
+        function addMinute() {
+            timeLeft += 60;
+            displayTime(timeLeft);
+        }
+
+        function minusMinute() {
+            if (timeLeft >= 60) {
+                timeLeft -= 60;
+            } else {
+                timeLeft = 0;
+            }
+            displayTime(timeLeft);
+        }
+
+        function endCountdown() {
+            timeLeft = 0;
+            clearInterval(countdown);
+            displayTime(timeLeft);
+            alert('Countdown Ended!');
+        }
+
+        startBtn.addEventListener('click', () => {
+            if (countdown) clearInterval(countdown);
+            startTimer();
+        });
+
+        stopBtn.addEventListener('click', stopTimer);
+        addMinuteBtn.addEventListener('click', addMinute);
+        minusMinuteBtn.addEventListener('click', minusMinute);
+        endBtn.addEventListener('click', endCountdown);
+
+        displayTime(timeLeft); // Initial display
+    </script>
+
+</body>
+
+</html>
