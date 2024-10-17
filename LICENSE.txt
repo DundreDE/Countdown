@@ -1,0 +1,9 @@
+MIT License
+
+Copyright (c) 2024 Native
+
+Hiermit wird, ohne Garantie oder Gewährleistung, jede Person, die eine Kopie dieser Software und der zugehörigen Dokumentation erhält, erlaubt, diese Software zu verwenden, zu kopieren, zu modifizieren, zu zusammenzuführen, zu veröffentlichen, zu verteilen, zu unterlizenzieren und/oder zu verkaufen, und die Personen, denen die Software übergeben wird, zu gestatten, dies unter den folgenden Bedingungen:
+
+Die obigen Urheberrechtshinweise und dieser Erlaubnishinweis sind in allen Kopien oder wesentlichen Teilen dieser Software enthalten.
+
+DIESE SOFTWARE WIRD "WIE BESEHEN" UND OHNE GARANTIEN ODER GEWÄHRLEISTUNGEN JEGLICHER ART, SEI ES AUSDRÜCKLICH ODER IMPLIZIT, EINGEGRIFFEN, DARUNTER, ABER NICHT BEGRENZT AUF, DIE GARANTIE DER HANDELSÜBLICHEN QUALITÄT, DER EIGNUNG FÜR EINEN BESTIMMTEN ZWECK UND DER NICHTVERLETZUNG. IN KEINEM FALL SIND DIE AUTOREN ODER DIE URHEBERRECHTSINHABER FÜR ANSPRÜCHE, SCHÄDEN ODER ANDERE HAFTUNGEN HAFTBAR, OB IN EINEM HANDEL, EINER HAFTUNG, EINEM VERTRAG ODER EINER ANDEREN RECHTLICHEN HANDLUNG, DIE AUS DER NUTZUNG DER SOFTWARE ENTSTEHT ODER DAMIT ZUSAMMENHÄNGT.
